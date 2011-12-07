@@ -1,0 +1,10 @@
+c:\Projects\HTML5\KendoTodo\KendoTodo\bin\KendoTodo.dll
+c:\Projects\HTML5\KendoTodo\KendoTodo\bin\KendoTodo.pdb
+c:\Projects\HTML5\KendoTodo\KendoTodo\bin\SquishIt.Framework.dll
+c:\Projects\HTML5\KendoTodo\KendoTodo\bin\AjaxMin.dll
+c:\Projects\HTML5\KendoTodo\KendoTodo\bin\Yahoo.Yui.Compressor.dll
+c:\Projects\HTML5\KendoTodo\KendoTodo\bin\dotless.Core.dll
+c:\Projects\HTML5\KendoTodo\KendoTodo\bin\EcmaScript.NET.modified.dll
+c:\Projects\HTML5\KendoTodo\KendoTodo\obj\Debug\ResolveAssemblyReference.cache
+c:\Projects\HTML5\KendoTodo\KendoTodo\obj\Debug\KendoTodo.dll
+c:\Projects\HTML5\KendoTodo\KendoTodo\obj\Debug\KendoTodo.pdb

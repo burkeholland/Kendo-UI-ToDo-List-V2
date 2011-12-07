@@ -1,0 +1,16 @@
+﻿@if(Request.IsAuthenticated) {
+    
+    // Tame our user name a little bit...
+    var display = Context.User.Identity.Name;
+    if (display.Length >= 17)
+    {
+        display = display.Substring(0, 17);
+    }
+    
+    <text>Welcome <b>@display&hellip;</b>!
+    [ @Html.ActionLink("Log Off", "LogOff", "Account") ]</text>
+}
+else {
+    <text>[ @Html.ActionLink("Log On", "LogOn", "Account") ]</text>
+
+}

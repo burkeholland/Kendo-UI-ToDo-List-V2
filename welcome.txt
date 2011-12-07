@@ -1,0 +1,29 @@
+﻿
+Yo!  Welcome to your new HTML5 Boilerplate MVC App.
+
+** MotherEffin TODO:
+
+1.  Modify your layout and default css (site.css)
+2.  Update the humans.txt file to let other humans know about you.
+3.  Set up google analytics and uncomment the google analytics tracking in _Layout.cshtml.
+4.  Remove this file so no one can see your super secret todo list.
+5.  Build in Release mode before deployment so your CSS and JS references are minified by SquishIt.
+
+** Notes About CSS and JS Combination and Minification
+
+I've gotten rid of the hacky AjaxMin tasks because they didn't work with AppHarbor.
+We now use SquishIt to combine and minify CSS and JS files. See the _Layout.cshtml
+in Views/Shared for more details.  
+When running in Debug the files are linked individually, but when in Release mode 
+they are combined and minified.
+
+** Source and Feedback
+
+The source for this template can be found at https://bitbucket.org/jacob4u2/mothereffin-html5-site.
+
+The name of this project is inspired by Paul Irish's http://mothereffinghsl.com.
+
+Based on the original HTML5 Boilerplate template; more info available at http://html5boilerplate.com.  
+
+Feedback is welcomed with warm hearts and loving arms at jacob.gable[at]gmail.com, or 
+you can log issues at the bitbucket project site.

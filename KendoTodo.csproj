@@ -86,7 +86,9 @@
     <Content Include="css\Kendo\textures\glass.png" />
     <Content Include="css\Kendo\textures\highlight.png" />
     <Content Include="js\libs\jquery\pubsub.js" />
+    <Content Include="js\libs\kendo\kendo.web.min.js" />
     <Content Include="js\modules\items\events\todoListEvents.js" />
+    <Content Include="js\modules\items\views\grid.js" />
     <Content Include="js\modules\items\items.js" />
     <Compile Include="Models\Item.cs" />
     <Compile Include="Models\Meta.cs" />
@@ -111,9 +113,8 @@
     <Content Include="js\libs\jquery.validate.min.js" />
     <Content Include="js\libs\jquery.validate.unobtrusive.min.js" />
     <Content Include="js\libs\jquery\jquery.js" />
-    <Content Include="js\libs\kendo\kendo.all.min.js" />
     <Content Include="js\libs\kendo\kendo.js" />
-    <Content Include="js\models\item.js" />
+    <Content Include="js\modules\items\models\item.js" />
     <Content Include="js\modules\items\templates\TodoList.htm" />
     <Content Include="js\modules\networkTraffic\templates\PanelBar.htm" />
     <Content Include="js\mylibs\boilerplate.js" />

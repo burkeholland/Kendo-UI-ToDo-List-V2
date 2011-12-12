@@ -4,7 +4,7 @@ define([
 // These are path alias that we configured in our bootstrap
   'jQuery',         // lib/jquery/jquery.js
   'Kendo',          // libs/kendo/kendo.js
-  'models/item',    // modules/item.js
+  'modules/items/models/item',    // modules/item.js
   'utils/root',     // utils/console.js
   'modules/items/items'     // views/items.js
 ], function ($, kendo, model, root) {
@@ -19,7 +19,10 @@ define([
             },
             destroy: {
                 url: root("Home/Delete"),
-                type: "POST"
+                type: "POST",
+                success: function (data) {
+                    $.publish("/dataSource/deleted", [data]);
+                }
             },
             update: {
                 url: root("Home/Update"),

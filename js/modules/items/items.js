@@ -14,7 +14,7 @@ define([
         // load in the items view
         itemsView.load(el);
 
-        dataSource.read();
+        // dataSource.read();
     };
 
     // private

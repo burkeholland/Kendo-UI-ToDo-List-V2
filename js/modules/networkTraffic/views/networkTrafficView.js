@@ -24,7 +24,7 @@ define([
         $.subscribe("/log/request", function (id, url, data, type) {
             var entry = kendo.template($(logEntryTemplate).html());
 
-            $("#log").html(entry({
+            $("#log").append(entry({
                 requestId: id,
                 requestUrl: url,
                 requestData: data ? unescape(data) : "",

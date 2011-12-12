@@ -32,6 +32,32 @@ namespace KendoTodo.Controllers
             return this.Json(newItem);
         }
 
+        public JsonResult Delete(Item item) {
+            var items = Items();
+            var itemToDelete = (from i in items
+                                where i.ID == item.ID
+                                select i).FirstOrDefault();
+
+            items.Remove(itemToDelete);
+
+            Session["Items"] = items;
+
+            return this.Json(items);
+        }
+
+        public JsonResult Update(Item item) {
+            var items = Items();
+            var itemToUpdate = (from i in items
+                                where i.ID == item.ID
+                                select i).FirstOrDefault();
+
+            itemToUpdate.Name = item.Name;
+
+            Session["Items"] = items;
+
+            return this.Json(item);
+        }
+
         private IList<Item> Items() {
             return (IList<Item>)Session["Items"];
         }
@@ -39,10 +65,12 @@ namespace KendoTodo.Controllers
         private Models.Item CreateItem(string name) {
             var items = Items();
             // get the max id
-            var maxID = (from i in items
+            int maxId = 1;
+            if (items.Count != 0)
+                maxId = (from i in items
                          select i.ID).Max();
 
-            var newItem = new Models.Item { ID = maxID + 1, Name = name };
+            var newItem = new Models.Item { ID = maxId + 1, Name = name };
 
             items.Add(newItem);
 

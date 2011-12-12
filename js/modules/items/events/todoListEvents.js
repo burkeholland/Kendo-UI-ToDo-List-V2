@@ -8,12 +8,11 @@ define([
 ], function ($, kendo, dataSource) {
     var pub = {};
 
-    pub.load = function (el) {
-        // create listeners for the events
-        $(el).delegate(".k-button", "click", function (e) {
+    pub.load = function(el,selector, event) {
+        $(el).delegate(selector, event, function (e) {
             var that = $(this),
                 eventData = that.data("event");
-                $.publish("/todoList/events/" + eventData, [ e ]);
+            $.publish("/todoList/events/" + eventData, [e]);
         });
     }
 

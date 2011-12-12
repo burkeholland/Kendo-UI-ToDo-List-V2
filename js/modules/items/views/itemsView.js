@@ -6,9 +6,9 @@ define([
   'Kendo',      // libs/kendo/kendo.js
   'modules/items/dataSource',
   'text!/js/modules/items/templates/TodoList.htm',
-  'text!/js/modules/items/templates/Item.htm',
+  'modules/items/views/grid',
   'modules/items/events/todoListEvents'
-], function ($, kendo, dataSource, todoListTemplate, itemTemplate, events) {
+], function ($, kendo, dataSource, todoListTemplate, grid, events) {
     var pub = {};
 
     pub.load = function (el) {
@@ -17,22 +17,32 @@ define([
         var todoList = kendo.template($(todoListTemplate).html());
         el.html(todoList);
 
-        var item = kendo.template($(itemTemplate).html());
-        $.subscribe('/datasource/change', function (sender) {
-            $("#items").html(kendo.render(item, sender.view()));
-        });
+        // load in the grid
+        grid.load($(todoList).find("#grid"));
+
+        //        var item = kendo.template($(itemTemplate).html());
+        //        $.subscribe('/datasource/change', function (sender) {
+        //            $("#items").html(kendo.render(item, sender.view()));
+        //        });
 
         // subscribe to all the buton click / keyboard events
-        $.subscribe("/todoList/events/addItem", function (event) {
-            if ($.trim($("#new-item").val()) != "") {
-                dataSource.add({ Name: $("#new-item").val() });
+        $.subscribe("/todoList/events/create", function (event) {
+            if ($.trim($("#todo-list #new").val()) != "") {
+                dataSource.add({ Name: $("#todo-list #new").val() });
                 dataSource.sync();
-                $("#new-item").val("");
+                $("#todo-list #new").val("");
+                dataSource.read();
             }
         });
 
+        $.subscribe("/dataSource/change", function (sender) {
+            if (sender.view().length == 0) $(grid).hide();
+            else $(grid).show();
+        });
+
         // load up the events
-        events.load(el);
+        // create listeners for the events       
+        events.load(el, ".k-button", "click");
     }
 
     return pub;
